@@ -14,6 +14,25 @@ public class Realistic {
      * 
      * @return int with the smallest value in array arr
      */
+    public static Integer remove() {
+        if (arr.length == 0) {
+            return null; // Return null if array is empty
+        }
+        int smallest_index = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[smallest_index]) {
+                smallest_index = i;
+            }
+        }
+        int result = arr [smallest_index]; // Stores smallest element as an intenger
+        int[] temporary = new int[arr.length - 1];
+        for (int i = 0; i < smallest_index; i++) {
+            temporary[i] = arr[i];
+        }
+        arr = temporary;
+        return result; // Returns the smallest element
+    }
+
     public static int getSmallest() {
         // Assume smallest is first element
         int smallest_index = 0;
